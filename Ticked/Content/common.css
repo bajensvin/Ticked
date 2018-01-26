@@ -1,0 +1,46 @@
+﻿.logo {
+    background: url("https://i.imgur.com/kvIeQbd.png");
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 200px;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url("https://d36tnp772eyphs.cloudfront.net/blogs/1/2014/08/Smith-Rock-940x595.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0;
+}
+#main-nav > ul {
+    width: 100%;
+    list-style-type: none;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    display: inline-block;
+    overflow: hidden;
+    background-color: #333;
+    text-align: center;
+}
+#main-nav li {
+    display:inline;
+}
+#main-nav li a {
+    margin: -2px;
+    display: inline-block;
+    color: white;
+    padding: 20px 50px;
+    text-decoration: none;
+}
+#main-nav li a:hover {
+    background-color: #111;
+}
+#main-nav a.active {
+    background-color: #111;
+    text-decoration: underline;
+}
+.clear {
+    border-bottom: 2px solid #111;
+    width: 100%;
+}

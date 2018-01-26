@@ -1,0 +1,12 @@
+﻿@using Ticked.Models
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    var text = (HomeModel)ViewData["PageText"];
+}
+
+<h2 class="initial-text">@text.PageTextEnglish</h2>
+
