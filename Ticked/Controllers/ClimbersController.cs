@@ -10,7 +10,7 @@ namespace Ticked.Controllers
     public class ClimbersController : Controller {
         // GET: Climbers
         public ActionResult Index() {
-            ClimbersModel cModel = new ClimbersModel("Micke", "Lindfors", "Klätterverket");
+            ClimbersModel cModel = new ClimbersModel("", "", "");
             ViewBag.Message = "Hello " + cModel.fName + ' ' + cModel.lName + ' ' + cModel.hGym;
             return View();
         }
