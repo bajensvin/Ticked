@@ -5,10 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Ticked.Models;
 
-namespace Ticked.Controllers
-{
-    public class HomeController : Controller
-    {
+namespace Ticked.Controllers {
+    public class HomeController : Controller {
         // GET: Home
         public ActionResult Index() {
             HomeModel hModel = new HomeModel {
