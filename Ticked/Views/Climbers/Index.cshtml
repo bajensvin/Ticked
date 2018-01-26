@@ -4,17 +4,31 @@
     ViewBag.Title = "Climbers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<label>First Name</label>
+@{ 
+    if (IsPost) {
+        string firstName = Request.Form["First_Name"];
+        string lastname = Request.Form["Last_Name"];
+        string gym = Request.Form["Gym"];
+        <text>
+        You entered: <br />
+        First name: @firstName <br />
+        Last name: @lastname <br />
+        Gym: @gym <br />
+        </text>
+    }
+}
+<form method="post">
+<label for="First_Name">First Name</label>
 <div>
-<input id="First_Name" type="text" class="input" role="textbox" />
+<input name="First_Name" type="text" class="input" role="textbox" />
 </div>
-<label>Last Name</label>
+<label for="Last_Name">Last Name</label>
 <div>
-<input id="Last_Name" type="text" class="input" role="textbox" />
+<input name="Last_Name" type="text" class="input" role="textbox" />
 </div>
-<label>Gym</label>
+<label for="Gym">Gym</label>
 <div>
-<input id="Gym" type="text" class="input" role="textbox" />
+<input name="Gym" type="text" class="input" role="textbox" />
 </div>
 <div>
 <button id="SubmitBtn" type="submit" role="button" value="Submit">
@@ -22,5 +36,5 @@
     <div class="sub-text">Inputs</div>
 </button>
 </div>
-<div class="clear">
-</div>
+<div class="clear"></div>
+</form>
