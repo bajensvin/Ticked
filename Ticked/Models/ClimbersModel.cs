@@ -5,13 +5,14 @@ using System.Web;
 
 namespace Ticked.Models {
     public class ClimbersModel {
-        public string fName { get; set; }
-        public string lName { get; set; }
-        public string hGym { get; set; }
-        public ClimbersModel(string firstName, string lastName, string homeGym) {
-            this.fName = firstName;
-            this.lName = lastName;
-            this.hGym = homeGym;
-        }
+        public int ClimberId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string HomeGym { get; set; }
+        //public ClimbersModel(string firstName, string lastName, string homeGym) {
+        //    this.fName = firstName;
+        //    this.lName = lastName;
+        //    this.hGym = homeGym;
+        //}
     }
 }

@@ -11,6 +11,9 @@ body {
     background-size: 100%;
     margin: 0;
 }
+.text-white {
+    color: ghostwhite;
+}
 #main-nav > ul {
     width: 100%;
     list-style-type: none;

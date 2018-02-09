@@ -1,40 +1,26 @@
-﻿@using Ticked.Models
+﻿@model Ticked.Models.ClimbersModel
 
 @{
     ViewBag.Title = "Climbers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@{ 
-    if (IsPost) {
-        string firstName = Request.Form["First_Name"];
-        string lastname = Request.Form["Last_Name"];
-        string gym = Request.Form["Gym"];
-        <text>
-        You entered: <br />
-        First name: @firstName <br />
-        Last name: @lastname <br />
-        Gym: @gym <br />
-        </text>
-    }
-}
-<form method="post">
-<label for="First_Name">First Name</label>
+@using (Html.BeginForm("SaveClimber", "Climbers", FormMethod.Post)) {
 <div>
-<input name="First_Name" type="text" class="input" role="textbox" />
+@Html.LabelFor(m => m.FirstName, new { @class = "text-white" })
+@Html.TextBoxFor(m => m.FirstName)
 </div>
-<label for="Last_Name">Last Name</label>
 <div>
-<input name="Last_Name" type="text" class="input" role="textbox" />
+@Html.LabelFor(m => m.LastName, new { @class = "text-white" })
+@Html.TextBoxFor(m => m.LastName)
 </div>
-<label for="Gym">Gym</label>
 <div>
-<input name="Gym" type="text" class="input" role="textbox" />
+@Html.LabelFor(m => m.HomeGym, new { @class = "text-white" })
+@Html.TextBoxFor(m => m.HomeGym)
 </div>
 <div>
 <button id="SubmitBtn" type="submit" role="button" value="Submit">
-    <div class="submit-button">Submit</div>
-    <div class="sub-text">Inputs</div>
+    <div class="submit-button">Save</div>
 </button>
 </div>
 <div class="clear"></div>
-</form>
+}
