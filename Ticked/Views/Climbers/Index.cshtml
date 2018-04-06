@@ -1,26 +1,49 @@
-﻿@model Ticked.Models.ClimbersModel
+﻿@model Ticked.Models.ClimbersViewModel
+
 
 @{
     ViewBag.Title = "Climbers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("SaveClimber", "Climbers", FormMethod.Post)) {
-<div>
-@Html.LabelFor(m => m.FirstName, new { @class = "text-white" })
-@Html.TextBoxFor(m => m.FirstName)
-</div>
-<div>
-@Html.LabelFor(m => m.LastName, new { @class = "text-white" })
-@Html.TextBoxFor(m => m.LastName)
-</div>
-<div>
-@Html.LabelFor(m => m.HomeGym, new { @class = "text-white" })
-@Html.TextBoxFor(m => m.HomeGym)
-</div>
-<div>
-<button id="SubmitBtn" type="submit" role="button" value="Submit">
-    <div class="submit-button">Save</div>
-</button>
-</div>
-<div class="clear"></div>
+@using (Html.BeginForm("CreateClimber", "Climbers", FormMethod.Post)) {
+    <div>
+        <button id="button" type="button" value="click">Create Climber</button>
+    </div>
+    <div id="hiddeninputs" hidden>
+    <div>
+        @Html.LabelFor(m => m.Climber.FirstName, new { @class = "text-white" })
+        @Html.TextBoxFor(m => m.Climber.FirstName)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Climber.LastName, new { @class = "text-white" })
+        @Html.TextBoxFor(m => m.Climber.LastName)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Climber.HomeGym, new { @class = "text-white" })
+        @Html.TextBoxFor(m => m.Climber.HomeGym)
+    </div>
+    <div>
+        <button id="SubmitButton" type="submit" role="button" value="Submit">
+            <div class="submit-button">Save</div>
+        </button>
+    </div>
+    </div>
+    <h1 class="text-white">Climbers</h1>
+    <table class="text-white">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Home Gym</th>
+        </tr>
+        @foreach (var item in Model.ListOfClimbers) {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.HomeGym</td>
+            <td>@Html.ActionLink("Edit", "EditClimber", item.ClimberId)</td>
+        </tr>
+        }
+    </table>
+    <script src="~/Scripts/scripts.js"></script>
+    }
 }

@@ -4,3 +4,10 @@
         $(this).addClass('active');
     });
 });
+
+$("#button").click(function () {
+    $("#hiddeninputs").show();
+});
+$("#button").click(function () {
+    this.style.display = 'none';
+})
